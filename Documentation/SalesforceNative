@@ -2,5 +2,7 @@ Campaign Event
 Campaign Members (attendee, volunteer, sponsor - add a field or record type to differentiate)
 Opportunity (paid attendees or sponsorships)
 Accounts (vendors) - separate, this solution is not ideal
+Accounts as venue 
 Group Registrations: Will not work in this model
-
+Tasks / Coordnation as tasks on the campaign, due dates, owners. However we can not templatize this
+Timelines (explore solutions)
