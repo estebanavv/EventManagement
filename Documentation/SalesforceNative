@@ -15,7 +15,9 @@ Account = venue
 
 Group Registrations: Will not work in this model
 
-Tasks / Coordnation as tasks on the campaign, due dates, owners. However we can not templatize this
+Campaign Tasks: Tasks / Coordnation as tasks on the campaign, due dates, owners. However we can not templatize this
+
+Chatter: Post-event debriefs, creation of best practices
 
 Problems with this model:
 Timelines will not be easily templated in this model (explore solutions)
