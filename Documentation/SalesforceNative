@@ -18,7 +18,9 @@ Group Registrations: Will not work in this model
 
 Campaign Tasks: Tasks / Coordnation as tasks on the campaign, due dates, owners. However we can not templatize this
 
-Chatter: Post-event debriefs, creation of best practices
+Campaign Chatter: Use chatter with topics on Post-event debriefs, creation of best practices
+
+Cases: Possible for tracking vendors (relationship between the campaign and vendor recording both good and bad).
 
 Problems with this model:
 Timelines will not be easily templated in this model (explore solutions)
