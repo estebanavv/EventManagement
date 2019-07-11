@@ -8,7 +8,9 @@ Campaign Event (can be used for reporting)
 Campaign Members (attendee, volunteer, sponsor - add a field or record type to differentiate). 
 Can be used to track recruitment, list emails + email templates (invitations).
 
-Opportunity (paid attendees, comp'ed attendees and / or sponsorships)
+Opportunity (paid attendees, comp'ed attendees and / or sponsorships, can be any amount - e.g., group sale)
+Opportunities can have contact roles. Opportunity Contact Role could help with group registrations however will not impact the count
+They still need to be a member of the campaign and we wouldnot want to duplicate data.
 
 Accounts (vendors) - separate, this solution is not ideal
 
