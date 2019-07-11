@@ -4,7 +4,7 @@ Project Description: We are replicating the same ways of managing events over an
 
 Project Audience: Event planners, marketers
 
-Project Team: Esteban Dozsa, Deb Van Zegeren, Punita Virkud, Deidre Callahan, Prince Sadie, Alexandra Laxmi Iyer
+Project Team: Esteban Dozsa, Deb Van Zegeren, Punita Virkud, Deidre Callahan, Prince Sadie, Alexandra Laxmi Iyer, Michael Slawnik
 
 Contributing: TBD - If someone were to contribute to this project at the next Sprint what would you want them to work on to move this project forward?
 
