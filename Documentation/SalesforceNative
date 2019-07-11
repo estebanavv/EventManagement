@@ -2,7 +2,7 @@ POSSIBLE MODEL:
 
 IMAGE
 
-Campaign Event
+Campaign Event (can be used for reporting)
 
 Campaign Members (attendee, volunteer, sponsor - add a field or record type to differentiate). 
 Can be used to track recruitment, list emails + email templates (invitations).
