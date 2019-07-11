@@ -1,7 +1,7 @@
 Campaigns:
 Campaign Event
-Campaign Member (attendee)
+Campaign Members (attendee, volunteer, sponsor - add a field or record type to differentiate)
 Opportunity (paid attendees or sponsorships)
-
+Accounts (vendors) - separate, this solution is not ideal
 
 
