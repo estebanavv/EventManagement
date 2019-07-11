@@ -3,11 +3,21 @@ POSSIBLE MODEL:
 IMAGE
 
 Campaign Event
-Campaign Members (attendee, volunteer, sponsor - add a field or record type to differentiate)
+
+Campaign Members (attendee, volunteer, sponsor - add a field or record type to differentiate). 
+Can be used to track recruitment, list emails + email templates (invitations).
+
 Opportunity (paid attendees or sponsorships)
+
 Accounts (vendors) - separate, this solution is not ideal
-Accounts as venue 
+
+Account = venue 
+
 Group Registrations: Will not work in this model
+
 Tasks / Coordnation as tasks on the campaign, due dates, owners. However we can not templatize this
-Timelines (explore solutions)
-Table seating does not work in this model.
+
+Problems with this model:
+Timelines will not be easily templated in this model (explore solutions)
+Table seating does not work in this model
+Public calendars will not work in this model (may need communities)
