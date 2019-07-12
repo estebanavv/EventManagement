@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Capacity__c</fullName>
+        <description>Maximum number of participants for an event or activity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Maximum number of participants for an event or activity.</inlineHelpText>
+        <label>Capacity</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>County__c</fullName>
+        <externalId>false</externalId>
+        <label>County</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Antrim</fullName>
+                    <default>false</default>
+                    <label>Antrim</label>
+                </value>
+                <value>
+                    <fullName>Benzie</fullName>
+                    <default>false</default>
+                    <label>Benzie</label>
+                </value>
+                <value>
+                    <fullName>Grand Traverse</fullName>
+                    <default>false</default>
+                    <label>Grand Traverse</label>
+                </value>
+                <value>
+                    <fullName>Kalkaska</fullName>
+                    <default>false</default>
+                    <label>Kalkaska</label>
+                </value>
+                <value>
+                    <fullName>Manistee</fullName>
+                    <default>false</default>
+                    <label>Manistee</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Description_Long__c</fullName>
+        <externalId>false</externalId>
+        <label>Description_Long</label>
+        <length>25000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Display_on_Website__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Display on Website</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Event_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Cost</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Event_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Date Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Event_Duration__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Duration (Hours)</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_End_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>Event_Date_Time__c  + ( Event_Duration__c /24)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Event End Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Event_Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Location</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Seats_Available__c</fullName>
+        <description>Remaining seats</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Remaining seats</inlineHelpText>
+        <label>Seats Available</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Slots_remaining__c</fullName>
+        <externalId>false</externalId>
+        <formula>Capacity__c -  NumberOfContacts -  NumberOfLeads</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This field is not indicative of the number of people who have signed up for an event. This displays the initial capacity minus the number of contacts in the campaign. Does not display the number of guests, etc. Not to be confused with seats available.</inlineHelpText>
+        <label>Slots remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Waiver_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Waiver_Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+</CustomObject>

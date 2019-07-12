@@ -1,0 +1,60 @@
+<apex:page showheader="false" cache="false" controller="EventController" id="page"><apex:composition template="EventFormTemplate">
+<apex:define name="body">
+<apex:outputPanel rendered="{!campaign != null}">
+  <h1>{!campaign.Name}</h1>
+      
+        <apex:pageMessage summary="{!errorMessage}" rendered="{!error}" severity="warning" strength="3" />
+        <apex:pageMessages />
+  <apex:form styleClass="Events EventDetail">
+  <apex:pageBlock title="">
+        
+    <apex:pageBlockSection columns="1">
+        <apex:pageblockSectionItem >
+            <apex:outputLabel for="eventDate">Date:</apex:outputLabel>
+            <apex:outputText id="eventDate" value="{!eventDate}"/>
+        </apex:pageblockSectionItem>
+        <apex:pageblockSectionItem >
+            <apex:outputLabel for="startTime">Start time:</apex:outputLabel>
+            <apex:outputText id="startTime" value="{!startTime}"/>
+        </apex:pageblockSectionItem>
+        <apex:pageblockSectionItem >
+            <apex:outputLabel for="endTime">End time:</apex:outputLabel>
+            <apex:outputText id="endTime" value="{!endTime}"/>
+        </apex:pageblockSectionItem>
+        
+        <apex:pageblockSectionItem >
+            <apex:outputLabel for="event_location__c">Location:</apex:outputLabel>
+            <apex:outputField id="event_location__c" value="{!campaign.Event_Location__c}"/>
+        </apex:pageblockSectionItem>
+        <apex:pageblockSectionItem >
+            <apex:outputLabel for="county__c">County:</apex:outputLabel>
+            <apex:outputField id="county__c" value="{!campaign.County__c}"/>
+        </apex:pageblockSectionItem>
+        
+        <apex:pageblockSectionItem rendered="{!campaign.Seats_Available__c> 0}">
+            <apex:outputLabel for="Slots_Remaining__c">Seats Available:</apex:outputLabel>
+            <apex:outputField id="Slots_Remaining__c" value="{!campaign.Seats_Available__c}"/>
+        </apex:pageblockSectionItem>
+        <apex:pageblockSectionItem rendered="{!campaign.Seats_Available__c< 1}">
+            <apex:outputLabel for="Slots_Remaining__c" style="color: red;">Seats Available:</apex:outputLabel>
+            <apex:outputField id="Slots_Remaining__c" value="{!campaign.Seats_Available__c}" style="color: red;"/>
+        </apex:pageblockSectionItem>
+        <apex:pageblockSectionItem >
+            <apex:outputLabel for="Event_Cost__c">Event cost:</apex:outputLabel>
+            <apex:outputField id="Event_Cost__c" value="{!campaign.Event_Cost__c}"/>
+        </apex:pageblockSectionItem>
+        <apex:pageblockSectionItem >
+            <apex:outputLabel for="description">Description:</apex:outputLabel>
+            <apex:outputField id="description" value="{!campaign.Description_Long__c}"/>
+        </apex:pageblockSectionItem>
+        <br/>
+        <apex:pageBlockSection rendered="{!campAvailable}">
+            <apex:commandLink styleClass="green_button" action="{!signUp}" value="Sign Up for Event"/>
+        </apex:pageBlockSection>
+    </apex:pageBlockSection>
+    
+  </apex:pageBlock>
+  </apex:form>
+</apex:outputPanel>
+ </apex:define></apex:composition>
+</apex:page>

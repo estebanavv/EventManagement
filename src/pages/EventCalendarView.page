@@ -1,0 +1,144 @@
+<apex:page controller="EventController" showHeader="false" sidebar="false"><apex:composition template="EventFormTemplate">
+    <apex:define name="head">
+        <style type='text/css'>
+            .availableEvent, .nonAvailableEvent {
+                background-color: #F8F5F0;
+                border-bottom: 1px solid #00704A;
+                padding: 2px;
+                text-decoration: none; 
+                font-size: .75em;
+            }
+            
+            .availableEvent {
+                color: #000000;
+            }
+                .availableEvent a{
+                    color: #00704A !important;
+                }
+            .availableEvent a, .nonAvailableEvent a {
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+            
+            .nonAvailableEvent {
+                color: #BDBDBD;
+                border-bottom: 1px dotted #696A6D;
+            }
+                .nonAvailableEvent a {
+                    color: #696A6D !important;
+                }
+            
+            ._availableEvent:hover, ._nonAvailableEvent:hover {
+                cursor: pointer; cursor: hand;
+                color: #000000;
+                /*font-weight: bold;*/
+                background-color: #FACC2E;
+            }
+            
+            .detailTable {
+                margin: 0px auto;
+            }
+            
+            .detailTable td {
+                border-bottom: 3px dashed gray; 
+            }
+            .dayHeader {
+                font-weight: bold;
+                color: #696A6D;
+            }
+            .calActive .dayHeader {
+                background-color: #DBD8BD !important;
+            }
+            td.calToday {
+                background-color: #f4f8F8 !important;
+                border-bottom: 1px solid #00704A !important;
+            }
+            .calToday .dayHeader {
+                color: white !important;
+                background-color: #00704A !important;
+            }
+            .calDays {
+                font-weight: bold;
+                color: #3E4044;
+            }
+            td {
+                color: #696A6D;
+                font-family: 'ITC Franklin Gothic', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            }
+        </style>
+    </apex:define>
+    <apex:define name="body">
+    <apex:pageMessages />
+        <h2>Upcoming Events</h2>
+        
+        <apex:form id="theForm">      
+        <apex:outputPanel id="theCalendar">
+            <!--<div>
+                <apex:selectCheckboxes value="{!selectedTypes}" >
+                    <apex:actionStatus id="counterStatus" 
+                                   startText="loading..." 
+                                   stopText="Filter:"/>
+                    <apex:selectOptions value="{!fOps}" />
+                    <apex:actionSupport event="onchange" 
+                                action="{!filterCalendar}" 
+                                rerender="theForm" status="counterStatus"/>
+                </apex:selectCheckboxes>
+            </div>-->
+            <div class="bCalendar">
+                <table class="calendarMonthView" width="100%">
+                    <caption>
+                        <div class="calHeader">
+                            <apex:commandButton action="{!prev}" title="Previous Month" image="/img/func_icons/cal/leftArrow.gif" style="background: none; border: 0px;" />
+                              {!month.monthname}  {!month.yearname}  
+                            <apex:commandButton action="{!next}" title="Next Month" image="/img/func_icons/cal/rightArrow.gif" style="background: none; border: 0px;" />
+                        </div>
+                    </caption>
+                    
+                    <tbody>
+                        <tr class="headerRow">
+                        <th scope="col" class="calDays">Sunday</th>
+                        <th scope="col" class="calDays">Monday</th>
+                        <th scope="col" class="calDays">Tuesday</th>
+                        <th scope="col" class="calDays">Wednesday</th>
+                        <th scope="col" class="calDays">Thursday</th>
+                        <th scope="col" class="calDays">Friday</th>
+                        <th scope="col" class="calDays">Saturday</th>
+                        </tr>
+
+                        <apex:repeat value="{!weeks}" var="wk" id="foreachWeek">
+                            <tr>
+                                <apex:repeat value="{!wk.days}" var="day" id="foreachday">
+                                    <td class="{!day.cssname}" height="90" valign="top">
+                                    <div class="date dayHeader">
+                                    <apex:outputLabel value="{!day.dayofmonth}" />
+                                    </div>
+                                    
+                                    <div>
+                                    
+                                    <apex:repeat value="{!events[day.date]}" var="event" id="foreachevent">
+                                        <div class="{!IF(event.Event_Date_Time__c > NOW(), 'availableEvent', 'nonAvailableEvent')}">
+                                            <apex:outputLink value="/apex/EventDetail">{!event.Name}
+                                                <apex:param name="campaignId" value="{!event.Id}"/>
+                                            </apex:outputLink><br/>
+                                            <apex:outputPanel rendered="{!NOT(eventsSignedUp[event.Id])}">
+                                            </apex:outputPanel>
+                                            <apex:outputPanel rendered="{!eventsSignedUp[event.Id]}" style="display: block; text-align: right; margin-bottom: 5px;">
+                                                <apex:image url="/img/func_icons/util/checkmark16.gif" alt="Shift signed up" />
+                                            </apex:outputPanel>
+                                            <!--<apex:outputText value="Slots: {!event.Slots_remaining__c}" />-->
+                                        </div>
+                                    </apex:repeat>
+                                    </div>
+                                    </td>
+                                </apex:repeat>
+                            </tr>
+                        
+                        </apex:repeat>
+
+                    </tbody>
+                </table>
+            </div>
+        </apex:outputPanel>
+        </apex:form>
+    </apex:define></apex:composition>
+</apex:page>

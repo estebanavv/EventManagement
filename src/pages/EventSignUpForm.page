@@ -1,0 +1,49 @@
+<apex:page showHeader="false" sidebar="false" controller="EventController"><apex:composition template="EventFormTemplate">
+<apex:define name="body"><apex:outputPanel rendered="{!campaign != null}">
+
+    <h1>Sign Up for {!campaign.Name}</h1>
+    <br/> 
+    <apex:form id="EventSignUpForm" styleClass="Events">
+    <apex:pageBlock >
+        <apex:pageMessages />
+        <br/>
+        <div><span style="border-left:3px solid #CC0000;">&nbsp;</span>= Required</div>
+        <br/>
+        <apex:pageBlockSection columns="1" showHeader="false">
+            <apex:pageBlockSectionItem ><h3>CONTACT DETAILS</h3></apex:pageBlockSectionItem>
+            <apex:inputField value="{!contact.FirstName}" label="First Name:" required="true"/>
+            <apex:inputField value="{!contact.LastName}" label="Last name:"/>
+            <apex:inputField value="{!contact.Email}" label="Email:" required="true"/>
+            <apex:inputField value="{!contact.Phone}" label="Phone:"/>
+            <apex:inputText value="{!guests}" label="Total attendees in party:" required="true"/>
+        </apex:pageBlockSection>
+        <br/>
+        <apex:pageBlockSection columns="1" showHeader="false">
+            <apex:pageBlockSectionItem ><h3>ADDRESS</h3></apex:pageBlockSectionItem>
+            <apex:inputField value="{!contact.MailingStreet}" label="Street:"/>
+            <apex:inputField value="{!contact.MailingCity}" label="City:"/>
+            <apex:inputField value="{!contact.MailingState}" label="State/Province:"/>
+            <apex:inputField value="{!contact.MailingPostalCode}" label="Zip/Postal code:"/>
+            <apex:inputField value="{!contact.MailingCountry}" label="Country:"/><!-- -->
+        </apex:pageBlockSection>
+        <br/>
+        <apex:pageBlockSection columns="1" rendered="{!campaign.Waiver_Required__c}" showHeader="false">
+            <apex:pageBlockSectionItem ><h3>LIABILITY WAIVER AND PHOTO RELEASE</h3></apex:pageBlockSectionItem>
+            <p>Hikes and workdays are physical activities and can involve a certain amount of risk related to stress and strain on the body and exposure to the forces of nature.  
+            Although GTRLC and your event leader(s) take every precaution possible, please be aware that you may be in locations where the closest medical facility is some distance 
+            away.  It is up to you to determine your own physical ability to participate in this activity and your willingness to assume the risk.  By signing this form, you agree 
+            to assume all risks and liabilities related to or resulting from this activity.  Your participation signifies your agreement not to hold GTRLC or its representatives 
+            liable for any injury, loss or damage to yourself or members of your family or property arising from a consequence of this activity.  By signing this form, you also agree 
+            to grant GTRLC permission to use your photographic likeness for any and all purposes, including but not limited to publications and website entries, without payment or 
+            any other consideration.</p>
+            <apex:selectRadio value="{!waiver}" required="true">
+                <apex:selectOptions value="{!waiverOptions}"/>
+            </apex:selectRadio>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+            <apex:pageMessage summary="{!errorMessage}" rendered="{!error}" severity="warning" strength="3" />
+    <apex:commandLink styleClass="green_button" action="{!submitSignUp}" value="Sign Up"/>
+    </apex:form>
+
+</apex:outputPanel></apex:define></apex:composition>
+</apex:page>

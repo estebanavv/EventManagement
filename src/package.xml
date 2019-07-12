@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event Management Package</fullName>
+    <types>
+        <members>EventController</members>
+        <members>Month</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>EventCalendarView</members>
+        <members>EventDetail</members>
+        <members>EventFormTemplate</members>
+        <members>EventSignUpForm</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>CampaignMember.Agreed_to_Waiver__c</members>
+        <members>CampaignMember.Number_of_Guests__c</members>
+        <members>Campaign.Capacity__c</members>
+        <members>Campaign.County__c</members>
+        <members>Campaign.Description_Long__c</members>
+        <members>Campaign.Display_on_Website__c</members>
+        <members>Campaign.Event_Cost__c</members>
+        <members>Campaign.Event_Date_Time__c</members>
+        <members>Campaign.Event_Duration__c</members>
+        <members>Campaign.Event_End_Time__c</members>
+        <members>Campaign.Event_Location__c</members>
+        <members>Campaign.Seats_Available__c</members>
+        <members>Campaign.Slots_remaining__c</members>
+        <members>Campaign.Waiver_Required__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Campaign-Campaign Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Button_Background</members>
+        <members>EventsStyle</members>
+        <name>StaticResource</name>
+    </types>
+    <version>45.0</version>
+</Package>
