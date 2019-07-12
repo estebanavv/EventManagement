@@ -1,0 +1,24 @@
+minimum_cumulusci_version: '2.5.3'
+project:
+    name: EventManagementPackage
+    package:
+        name:  Event Management Package
+        api_version: '45.0'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/EventManagementPackage/tests
+            options:
+                outputdir: robot/EventManagementPackage/results
+
+    robot_testdoc:
+        options:
+            path: robot/EventManagementPackage/tests
+            output: robot/EventManagementPackage/doc/EventManagementPackage_tests.html
+
+flows:
+    config_qa:
+        1.1:
+            task: deploy_qa_config
